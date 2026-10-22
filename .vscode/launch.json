@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RegistronavesApplication<registronaves>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.registronaves.RegistronavesApplication",
+            "projectName": "registronaves",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
