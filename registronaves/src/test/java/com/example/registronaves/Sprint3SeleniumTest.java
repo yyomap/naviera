@@ -141,9 +141,7 @@ class Sprint3SeleniumTest {
     }
 
     private static Path pdfValido() throws IOException {
-        Path f = Files.createTempFile("solicitud", ".pdf");
-        Files.writeString(f, "%PDF-1.4\n%Documento de prueba\n%%EOF\n");
-        return f;
+        return DocumentoPrueba.crearPdf();
     }
 
     private static void aceptarConfirmacion() {

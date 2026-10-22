@@ -64,6 +64,12 @@
 			<artifactId>openpdf</artifactId>
 			<version>2.0.5</version>
 		</dependency>
+		<!-- OpenPDF necesita este proveedor para detectar PDFs cifrados y rechazarlos. -->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk18on</artifactId>
+			<version>1.86</version>
+		</dependency>
 		<dependency>
 			<groupId>com.google.zxing</groupId>
 			<artifactId>core</artifactId>

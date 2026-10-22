@@ -78,15 +78,19 @@ function pintarTabla() {
     const enlace = document.createElement("a");
     enlace.className = "btn o x";
 
-    if (n.estado === "Aprobado") {
-      enlace.href = "/api/naves/" + encodeURIComponent(n.id) + "/certificado";
-      enlace.target = "_blank";
-      enlace.textContent = "Certificado PDF";
-    } else {
-      enlace.href = "revision.html?id=" + encodeURIComponent(n.id);
-      enlace.textContent = "Revisar";
-    }
+    enlace.href = "revision.html?id=" + encodeURIComponent(n.id);
+    enlace.textContent = n.estado === "En revisión" ? "Revisar" : "Ver detalle";
     tdAccion.appendChild(enlace);
+
+    if (n.estado === "Aprobado") {
+      const certificado = document.createElement("a");
+      certificado.className = "btn o x";
+      certificado.href = "/api/naves/" + encodeURIComponent(n.id) + "/certificado";
+      certificado.target = "_blank";
+      certificado.rel = "noopener";
+      certificado.textContent = "Certificado PDF";
+      tdAccion.append(" ", certificado);
+    }
 
     tr.append(
       tdCodigo,

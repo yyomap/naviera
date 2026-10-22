@@ -126,9 +126,7 @@ class Sprint2SeleniumTest {
     }
 
     private static Path pdfValido() throws IOException {
-        Path f = Files.createTempFile("solicitud", ".pdf");
-        Files.writeString(f, "%PDF-1.4\n%Documento de prueba\n%%EOF\n");
-        return f;
+        return DocumentoPrueba.crearPdf();
     }
 
     // ayudas del armador (registro de una solicitud) 

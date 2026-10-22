@@ -1,5 +1,7 @@
 package com.example.registronaves.Model;
 
+import com.example.registronaves.exception.DatosInvalidosException;
+
 public enum EstadoTramite {
     EN_REVISION("En revisión"),
     APROBADO("Aprobado"),
@@ -15,6 +17,6 @@ public enum EstadoTramite {
         for (EstadoTramite e : values()) {
             if (e.etiqueta.equalsIgnoreCase(texto == null ? "" : texto.trim())) return e;
         }
-        throw new IllegalArgumentException("Estado no válido. Use: En revisión, Aprobado o Rechazado.");
+        throw new DatosInvalidosException("Estado no válido. Use: En revisión, Aprobado o Rechazado.");
     }
 }
